@@ -1,3 +1,9 @@
+#### Environment configuration, python runtime and packages
+
+1. The application configuration is maintained in manifest.yml
+2. To specify python run time, add it in runtime.txt
+3. To import any python packages, add it in requirements.txt
+
 #### Cloud foundry commands used
 1. cf login - To login to cloud foundry
 2. cf create-service hana hdi-shared healthyhabits - To create hana db instance and service
@@ -7,13 +13,6 @@
 
 1. healthyhabits - database is created in HANA
 2. Refer - dbqueries.sql
-
-
-#### Environment configuration, python runtime and packages
-
-1. The application configuration is maintained in manifest.yml
-2. To specify python run time, add it in runtime.txt
-3. To import any python packages, add it in requirements.txt
 
 #### Reference - 
  1. https://blogs.sap.com/2018/07/05/writing-and-modifying-data-using-rest-apis-with-python-on-xsa/
