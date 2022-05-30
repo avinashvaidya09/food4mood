@@ -7,6 +7,7 @@
 1. The application configuration is maintained in manifest.yml
 2. To specify python run time, add it in runtime.txt
 3. To import any python packages, add it in requirements.txt
+4. joblib_nb_trained_model.pkl is already trained machine learnt model which is used for food prediction
 
 #### Cloud foundry commands used
 1. cf login - To login to cloud foundry
