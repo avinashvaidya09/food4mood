@@ -35,9 +35,9 @@ def add_food_feedback_for_mood():
       table_name_with_schema = hanadb_obj.get_table_name_with_schema("MOOD")
       sql = (
          "INSERT INTO " + table_name_with_schema + " (USERID, MOOD, ENERGY, MINDSET, CRAVINGFOR, HEALTHGOAL, FOODCHOICE, USERIMAGEURL)"
-         "VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+         "VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
       )
-      vals =  ( payload_data['id'] , payload_data['mood'], payload_data['energy'],
+      vals = (payload_data['id'] , payload_data['mood'], payload_data['energy'],
       payload_data['mindset'],payload_data['cravingFor'],payload_data['healthGoal'],
       payload_data['foodChoice'],payload_data['userImageUrl'])
       hanadb_obj.add_one(sql, vals)
