@@ -1,7 +1,6 @@
 ## About this file
 
-### This file contains reference to all the technical details used to create this project and also
-### information about the project set up
+### This file contains reference to all the technical details used to create this project and also information about the project set up
 
 #### Environment configuration, python runtime and packages
 
