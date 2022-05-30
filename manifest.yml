@@ -1,0 +1,12 @@
+---
+applications:
+- name: Food4Mood
+  routes:
+    - route: python-foodformood-api-v1.cfapps.eu10-004.hana.ondemand.com
+
+  path: ./
+  memory: 128M
+  buildpack: python_buildpack
+  command: python ./src/server.py
+  services:
+  - healthyhabits
