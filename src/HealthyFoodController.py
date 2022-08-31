@@ -5,20 +5,19 @@ import joblib
 
 healthyfood_bp = Blueprint('HealthyFoodController', __name__)
 
-mood_map = {'Happy':1,'Sad':2,'OK':3}
-energy_map = {'High':4,'Low':5,'Exhausted':6}
-mindset_map = {'Focused':7, 'Distracted':8, 'Calm':9, 'Stressed':10}
-cravings_map = {'Sweet':11, 'Junk':12, 'Spicy':13}
-health_goals_map = {'Increase Muscles':15, 'Reduce Weight':16, 'Increase Weight':17}
+mood_map = {'Happy':1,'Sad':2,'OK':3,'Angry':4}
+energy_map = {'High':5,'Low':6,'Exhausted':7,'Energized':8}
+mindset_map = {'Focused':9, 'Distracted':10, 'Calm':11, 'Stressed':12}
+cravings_map = {'Sweet':13, 'Junk':14, 'Spicy':15,'Healthy':16}
+health_goals_map = {'LowSugar':17, 'HighCalorie':18, 'LowCalorie':19, 'LowCarb':20}
 
-food_choices_inverse_map = {18:'Burger', 19:'Burger & Juice', 20:'Burger & Energy Drink', 21:'Burger & Ice Cream', 
-                    22:'Mediterrenean wrap & Juice', 23:'Mediterrenean wrap', 24:'Mediterrenean wrap with Cheese', 
-                    25:'Mediterrenean wrap & Ice Cream', 26:'Salad with Protein & Juice'}
+food_choices_inverse_map = {21:'Tuna salad & Green tea', 22:'Burger & Juice', 23:'Burger & Energy Drink', 24:'Burger & Ice Cream', 
+                    25:'Mediterrenean wrap & Juice', 26:'Mediterrenean wrap & Cheese', 
+                    27:'Mediterrenean wrap & Ice Cream', 28:'Salad with Protein & Juice', 29:'Croissant & Smoothie'}
 
-health_tip_map = {18:'Eat Less Walk More', 19:'Take a bite and walk', 20:'Run', 21:'Burn some calories today evening', 
-                    22:'A quick 15 minutes walk is good for your health', 23:'Meditation is good for your health', 24:'Try some new activity today', 
-                    25:'Swimming is good in summer', 26:'Morning is good time for workout'
-}
+health_tip_map = {22:'Eat Less Walk More and drink lots of water', 23:'Take a bite and walk a mile', 26:'Burn some calories today evening', 
+                    27:'A quick 15 minutes walk is good for your health', 21:'Meditation is good for your health', 28:'Try some new activity today and relax', 
+                    24:'Swimming is good to burn calories', 25:'Morning is a great time for workout'}
 
 @healthyfood_bp.route('/', methods=['GET'])
 def get_healthy_food():
@@ -26,11 +25,11 @@ def get_healthy_food():
     input_energy = request.args.get('energy') or 'High'
     input_mindset = request.args.get('mindset') or 'Calm'
     input_cravings = request.args.get('cravings') or 'Junk'
-    input_health_goals = request.args.get('health_goals') or 'Reduce Weight'
+    input_health_goals = request.args.get('health_goals') or 'LowCarb'
 
     input_arr = [[mood_map[input_mood], energy_map[input_energy],mindset_map[input_mindset],cravings_map[input_cravings],health_goals_map[input_health_goals]]]
 
-    joblib_NB_Model = joblib.load('./resources/joblib_nb_trained_model.pkl')
+    joblib_NB_Model = joblib.load('./resources/joblib_NB_Trained_Model.pkl')
 
     nb_predict_real_data = joblib_NB_Model.predict(input_arr)
 

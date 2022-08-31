@@ -10,7 +10,9 @@
 4. joblib_nb_trained_model.pkl is already trained machine learnt model which is used for food prediction
 
 #### Cloud foundry commands used
-1. cf login - To login to cloud foundry
+1. cf api https://api.cf.eu10-004.hana.ondemand.com - To point to the cf instance of your subaccount
+2. cf login - To login to cloud foundry
+3. cf push - To deploy the application in your dev space.
 2. cf create-service hana hdi-shared healthyhabits - To create hana db instance and service
 3. cf logs --recent foodformoodapp - command to check latest logs
 
