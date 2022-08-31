@@ -14,7 +14,7 @@
 2. cf login - To login to cloud foundry
 3. cf push - To deploy the application in your dev space.
 2. cf create-service hana hdi-shared healthyhabits - To create hana db instance and service
-3. cf logs --recent foodformoodapp - command to check latest logs
+3. cf logs --recent Food4Mood - command to check latest logs. The name of the app should be same as in manifest.yml
 
 #### SQL Used for database
 
