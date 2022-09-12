@@ -17,7 +17,7 @@ food_choices_inverse_map = {21:'Tuna salad & Green tea', 22:'Burger & Juice', 23
 
 health_tip_map = {22:'Eat Less Walk More and drink lots of water', 23:'Take a bite and walk a mile', 26:'Burn some calories today evening', 
                     27:'A quick 15 minutes walk is good for your health', 21:'Meditation is good for your health', 28:'Try some new activity today and relax', 
-                    24:'Swimming is good to burn calories', 25:'Morning is a great time for workout'}
+                    24:'Swimming is good to burn calories', 25:'Morning is a great time for workout',29:'Keep Breathing and Move On'}
 
 @healthyfood_bp.route('/', methods=['GET'])
 def get_healthy_food():
